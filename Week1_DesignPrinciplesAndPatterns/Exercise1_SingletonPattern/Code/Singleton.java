@@ -22,7 +22,7 @@ class Logger {
     }
 }
 // Main.java
-public class Main {
+public class Singleton {
     public static void main(String[] args) {
 
         // Get two instances of Logger
