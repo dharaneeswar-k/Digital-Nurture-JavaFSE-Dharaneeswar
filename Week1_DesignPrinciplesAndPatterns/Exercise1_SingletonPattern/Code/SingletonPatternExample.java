@@ -14,7 +14,7 @@ class logger{
     }
 
 }
-public class Singleton {
+public class SingletonPatternExample {
 
     public static void main(String[] args) {
         logger log1 = logger.getInstance();
