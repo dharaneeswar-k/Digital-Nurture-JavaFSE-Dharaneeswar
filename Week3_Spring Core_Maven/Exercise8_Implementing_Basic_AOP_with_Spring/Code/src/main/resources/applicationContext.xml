@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+         http://www.springframework.org/schema/beans
+         https://www.springframework.org/schema/beans/spring-beans.xsd
+         http://www.springframework.org/schema/aop
+         https://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <!-- Enable AOP proxying -->
+    <aop:config>
+        <aop:aspect id="loggingAspect" ref="aspectBean">
+            <aop:pointcut id="serviceMethods" expression="execution(* com.library.service.*.*(..))"/>
+            <aop:before pointcut-ref="serviceMethods" method="logBefore"/>
+            <aop:after pointcut-ref="serviceMethods" method="logAfter"/>
+        </aop:aspect>
+    </aop:config>
+
+    <!-- Aspect Bean -->
+    <bean id="aspectBean" class="com.library.aspect.LoggingAspect"/>
+
+    <!-- BookRepository and BookService Beans -->
+    <bean id="bookRepository" class="com.library.repository.BookRepository"/>
+
+    <bean id="bookService" class="com.library.service.BookService">
+        <constructor-arg value="LibraryService"/>
+        <property name="bookRepository" ref="bookRepository"/>
+    </bean>
+
+</beans>

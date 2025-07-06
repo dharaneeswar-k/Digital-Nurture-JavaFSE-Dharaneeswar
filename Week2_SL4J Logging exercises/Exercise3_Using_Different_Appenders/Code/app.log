@@ -1,0 +1,4 @@
+23:02:17.796 [main] DEBUG com.example.LoggingWithAppenders - Debug message: Application started
+23:02:17.799 [main] INFO  com.example.LoggingWithAppenders - Info message: Executing logging test
+23:02:17.800 [main] WARN  com.example.LoggingWithAppenders - Warning message: Simulated warning
+23:02:17.800 [main] ERROR com.example.LoggingWithAppenders - Error message: Simulated error occurred
