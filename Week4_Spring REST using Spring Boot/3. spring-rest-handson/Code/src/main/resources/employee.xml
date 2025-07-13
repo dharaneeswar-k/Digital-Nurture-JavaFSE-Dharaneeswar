@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Skills -->
+    <bean id="java" class="com.cognizant.spring_rest_handson.model.Skill">
+        <property name="id" value="1"/>
+        <property name="name" value="Java"/>
+    </bean>
+
+    <bean id="python" class="com.cognizant.spring_rest_handson.model.Skill">
+        <property name="id" value="2"/>
+        <property name="name" value="Python"/>
+    </bean>
+
+    <bean id="sql" class="com.cognizant.spring_rest_handson.model.Skill">
+        <property name="id" value="3"/>
+        <property name="name" value="SQL"/>
+    </bean>
+
+    <bean id="aws" class="com.cognizant.spring_rest_handson.model.Skill">
+        <property name="id" value="4"/>
+        <property name="name" value="AWS"/>
+    </bean>
+
+    <bean id="htmlcss" class="com.cognizant.spring_rest_handson.model.Skill">
+        <property name="id" value="5"/>
+        <property name="name" value="HTML/CSS"/>
+    </bean>
+
+    <!-- Departments -->
+    <bean id="hr" class="com.cognizant.spring_rest_handson.model.Department">
+        <property name="id" value="1"/>
+        <property name="name" value="HR"/>
+    </bean>
+
+    <bean id="tech" class="com.cognizant.spring_rest_handson.model.Department">
+        <property name="id" value="2"/>
+        <property name="name" value="Technology"/>
+    </bean>
+
+    <bean id="finance" class="com.cognizant.spring_rest_handson.model.Department">
+        <property name="id" value="3"/>
+        <property name="name" value="Finance"/>
+    </bean>
+
+    <bean id="marketing" class="com.cognizant.spring_rest_handson.model.Department">
+        <property name="id" value="4"/>
+        <property name="name" value="Marketing"/>
+    </bean>
+
+    <bean id="design" class="com.cognizant.spring_rest_handson.model.Department">
+        <property name="id" value="5"/>
+        <property name="name" value="Design"/>
+    </bean>
+
+    <!-- Employees -->
+    <bean id="emp1" class="com.cognizant.spring_rest_handson.model.Employee">
+        <property name="id" value="1"/>
+        <property name="name" value="Amit"/>
+        <property name="department" ref="hr"/>
+        <property name="skill" ref="java"/>
+    </bean>
+
+    <bean id="emp2" class="com.cognizant.spring_rest_handson.model.Employee">
+        <property name="id" value="2"/>
+        <property name="name" value="Bhavya"/>
+        <property name="department" ref="tech"/>
+        <property name="skill" ref="python"/>
+    </bean>
+
+    <bean id="emp3" class="com.cognizant.spring_rest_handson.model.Employee">
+        <property name="id" value="3"/>
+        <property name="name" value="Chandan"/>
+        <property name="department" ref="finance"/>
+        <property name="skill" ref="sql"/>
+    </bean>
+
+    <bean id="emp4" class="com.cognizant.spring_rest_handson.model.Employee">
+        <property name="id" value="4"/>
+        <property name="name" value="Divya"/>
+        <property name="department" ref="marketing"/>
+        <property name="skill" ref="aws"/>
+    </bean>
+
+    <bean id="emp5" class="com.cognizant.spring_rest_handson.model.Employee">
+        <property name="id" value="5"/>
+        <property name="name" value="Dharaneeswar"/>
+        <property name="department" ref="design"/>
+        <property name="skill" ref="htmlcss"/>
+    </bean>
+
+    <!-- Employee List -->
+    <bean id="employeeList" class="java.util.ArrayList">
+        <constructor-arg>
+            <list>
+                <ref bean="emp1"/>
+                <ref bean="emp2"/>
+                <ref bean="emp3"/>
+                <ref bean="emp4"/>
+                <ref bean="emp5"/>
+            </list>
+        </constructor-arg>
+    </bean>
+
+</beans>
